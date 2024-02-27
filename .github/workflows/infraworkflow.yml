@@ -4,6 +4,14 @@ on:
         paths: 
         - 'ARM/**'
         - '.github/workflows/infraworkflow.yml'
+    workflow_dispatch:
+      inputs:
+          logLevel:
+            description: 'Log level'     
+            required: true
+            default: 'warning'
+          tags:
+            description: 'Test scenario tags'  
 
 env:
     AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID  }}    # set this to your Azure Subscription Id
